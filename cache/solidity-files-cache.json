@@ -1,0 +1,41 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "D:\\Harsh\\Blockchain Project-20260428T064536Z-3-001\\Blockchain Project\\contracts\\BlockCert.sol": {
+      "lastModificationDate": 1777366803866,
+      "contentHash": "707350deab7683ad1396d0a21f04b1cf",
+      "sourceName": "contracts/BlockCert.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.24"
+      ],
+      "artifacts": [
+        "BlockCert"
+      ]
+    }
+  }
+}
