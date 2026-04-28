@@ -1,16 +1,54 @@
-# React + Vite
+# Blockchain Certificate System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A decentralized application (dApp) built with React, Vite, Hardhat, and Solidity to issue and verify certificates on the blockchain.
 
-Currently, two official plugins are available:
+## Prerequisites
+Before you begin, ensure you have the following installed on your machine:
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [Git](https://git-scm.com/)
+- [MetaMask](https://metamask.io/) browser extension
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Setup Instructions
 
-## React Compiler
+Follow these steps to run the project on a new desktop:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. Clone the repository
+```bash
+git clone https://github.com/harshnarvekar21/Blockchain-Certificate-System.git
+cd Blockchain-Certificate-System
+```
 
-## Expanding the ESLint configuration
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 3. Start the Local Blockchain Node
+Open a terminal and run the following command to start a local Hardhat node. This will give you 20 test accounts with fake ETH.
+```bash
+npx hardhat node
+```
+*(Leave this terminal running in the background)*
+
+### 4. Deploy the Smart Contract
+Open a **new terminal window** in the same project directory and deploy the contract to your local network:
+```bash
+npx hardhat run scripts/deploy.cjs --network localhost
+```
+
+### 5. Start the Frontend Application
+In the same terminal where you deployed the contract, start the Vite development server:
+```bash
+npm run dev
+```
+
+## Connecting MetaMask
+To interact with the application, you need to connect your MetaMask wallet to the local Hardhat network:
+1. Open MetaMask and go to **Settings > Networks > Add Network > Add a network manually**.
+2. Fill in the details:
+   - **Network Name**: Hardhat Local
+   - **New RPC URL**: `http://127.0.0.1:8545/`
+   - **Chain ID**: `31337`
+   - **Currency Symbol**: `ETH`
+3. Click **Save**.
+4. To interact with the contracts, import one of the test accounts provided in step 3. In MetaMask, click on your account dropdown, select **Import Account**, and paste one of the private keys from the terminal running `npx hardhat node`.
